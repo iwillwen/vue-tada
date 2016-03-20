@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Just try Vue.js</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/tada.css">
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>Just try Vue.js</h1>
+
+      <div class="todo" v-bind:class="{'todo-editing': editing}">
+
+        <div class="todo-util">
+          <span class="glyphicon glyphicon-plus" v-on:click="addTask"></span>
+          <span class="glyphicon glyphicon-search"></span>
+          <input class="form-control" type="text" v-model="query" placeholder="Search...">
+        </div>
+
+        <ul class="todo-list">
+          <li class="todo-item" v-for="task in tasks | filterBy query in 'title' 'details'" track-by="$index"
+              v-bind:class="{'todo-item-done': task.done, 'todo-item-editing': task.editing}">
+            <span class="glyphicon glyphicon-ok" v-on:click="toggleStatus(task)"></span>
+            <div class="todo-content">
+              <h4>{{task.title}}</h4>
+              <p>{{task.details}}</p>
+            </div>
+            <div class="todo-control">
+              <span class="glyphicon glyphicon-pencil" v-on:click="editTask(task)"></span>
+              <span class="glyphicon glyphicon-remove" v-on:click="deleteTask(task)"></span>
+              <span class="glyphicon glyphicon-arrow-up" v-on:click="increasePriority(task)"></span>
+              <span class="glyphicon glyphicon-arrow-down" v-on:click="decreasePriority(task)"></span>
+            </div>
+            <div class="todo-editor">
+              <p><input class="form-control" type="text" v-model="task.title" autofocus></p>
+              <p><textarea class="form-control" rows="3" v-model="task.details"></textarea></p>
+              <div class="pull-right">
+                <button type="button" class="btn btn-default" v-on:click="cancelEdit(task)">Cancel</button>
+                <button type="button" class="btn btn-success" v-on:click="saveEdit(task)"
+                        v-bind:disabled="task.title === '' || task.details === ''">Save</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <script src="lib/vue/vue.min.js"></script>
+    <script src="src/js/tada.js"></script>
+  </body>
+</html>

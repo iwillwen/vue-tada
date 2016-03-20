@@ -1,0 +1,214 @@
+.container {
+  width: 750px;
+}
+
+h1 {
+  color: #34495e;
+  margin: 20px 0;
+}
+
+.todo {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.todo-util {
+  background: #1abc9c;
+  border-radius: 6px 6px 0 0;
+  padding: 20px 25px;
+  position: relative;
+}
+
+.todo-util .glyphicon {
+  color: #34495e;
+  font-size: 20px;
+  margin-top: -9px;
+  position: absolute;
+  top: 50%;
+}
+
+.todo-util .glyphicon-plus {
+  right: 25px;
+  cursor: pointer;
+}
+
+.todo-editing .todo-util .glyphicon-plus {
+  display: none;
+}
+
+.todo-util .glyphicon-search {
+  left: 25px;
+}
+
+.todo-util input,
+.todo-util input:focus {
+    background: none;
+    border: 0 none;
+    color: #34495e;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-indent: 0;
+    margin: 0;
+    padding: 5px 35px;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.todo-util input::-webkit-input-placeholder {
+    color: #34495e;
+}
+
+.todo-list {
+  background: #2c3e50;
+  border-radius: 0 0 6px 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-item {
+  list-style: none;
+  background: #34495e;
+  color: #bdc3c7;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.2;
+  margin: 0 0 3px;
+  padding: 15px 25px;
+  overflow: hidden;
+  position: relative;
+  transition: background .25s ease-in-out;
+}
+
+.todo-item:last-child {
+  margin-bottom: 0;
+  border-radius: 0 0 6px 6px;
+}
+
+.todo-item-done {
+  background: #2c3e50;
+}
+
+.glyphicon-ok {
+  background: #ecf0f1;
+  color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  margin-top: -12px;
+  transition: background .25s ease-in-out, color .25s ease-in-out;
+}
+
+.todo-item-done .glyphicon-ok {
+  background: #1abc9c;
+  color: #2c3e50;
+}
+
+.todo-item-editing .glyphicon-ok {
+  display: none;
+}
+
+.todo-content {
+  padding-left: 45px;
+}
+
+.todo-item-editing .todo-content {
+  display: none;
+}
+
+.todo-content h4 {
+  color: #ecf0f1;
+  transition: color .25s ease-in-out;
+}
+
+.todo-item-done .todo-content h4,
+.todo-item-done .todo-content p {
+  color: #1abc9c;
+}
+
+.todo-control {
+  font-size: 18px;
+  position: absolute;
+  top: -25px;
+  right: 10px;
+  transition: top .25s ease-in-out;
+}
+
+.todo-item-done .todo-control,
+.todo-item-editing .todo-control,
+.todo-editing .todo-control {
+  display: none;
+}
+
+.todo-item:hover .todo-control {
+  top: 10px;
+}
+
+.todo-control .glyphicon {
+  opacity: 0.4;
+  transition: opacity .25s ease-in-out;
+}
+
+.todo-control .glyphicon:hover {
+  opacity: 1;
+}
+
+.todo-control .glyphicon:active {
+  color: #16a085;
+  opacity: 1;
+}
+
+.todo-editor {
+  display: none;
+}
+
+.todo-item-editing .todo-editor {
+  display: block;
+}
+
+.todo-editor textarea {
+  resize: none;
+}
+
+.todo-editor .btn,
+.todo-editor .btn:focus,
+.todo-editor .btn:hover,
+.todo-editor .btn:active {
+  border: 0 none;
+  outline: 0 none;
+  min-width: 100px;
+  margin-left: 5px;
+  transition: background .25s linear;
+}
+
+.todo-editor .btn-default {
+  background: #bdc3c7;
+}
+
+.todo-editor .btn-default:focus,
+.todo-editor .btn-default:hover {
+  background: #cacfd2;
+}
+
+.todo-editor .btn-default:active {
+  background: #a1a6a9;
+}
+
+.todo-editor .btn-success {
+  background: #1abc9c;
+}
+
+.todo-editor .btn-success:focus,
+.todo-editor .btn-success:hover {
+  background: #48c9b0;
+}
+
+.todo-editor .btn-success:active {
+  background: #16a085;
+}
+
+.todo-editor .btn[disabled] {
+  cursor: not-allowed;
+}
