@@ -71,6 +71,8 @@ var demo = new Vue({
     cancelEdit: function(task) {
       if (task.lastTitle === '' || task.lastDetails === '') {
         this.deleteTask(task)
+        this.editing = false
+        return
       }
       task.title = task.lastTitle
       task.details = task.lastDetails
